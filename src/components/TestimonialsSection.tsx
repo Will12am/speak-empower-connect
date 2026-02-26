@@ -1,0 +1,80 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Quote } from "lucide-react";
+
+const TestimonialsSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
+  const testimonials = [
+    {
+      quote: "L'intervention d'Indira a transformé notre façon d'aborder la santé mentale au sein de nos équipes. Un impact durable et profond.",
+      author: "Marie Dupont",
+      role: "DRH, Groupe Lumina",
+    },
+    {
+      quote: "Une conférencière exceptionnelle qui sait captiver son audience tout en transmettant des messages essentiels. Nos collaborateurs en parlent encore.",
+      author: "Thomas Laurent",
+      role: "Directeur RSE, Espace & Co",
+    },
+  ];
+
+  const stats = [
+    { value: "5 000+", label: "Personnes formées" },
+    { value: "98%", label: "Taux de satisfaction" },
+    { value: "120+", label: "Interventions réalisées" },
+    { value: "50+", label: "Entreprises accompagnées" },
+  ];
+
+  return (
+    <section id="temoignages" className="py-24 md:py-32 bg-background">
+      <div
+        ref={ref}
+        className={`container mx-auto px-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      >
+        <div className="text-center mb-16">
+          <p className="font-sans text-sm uppercase tracking-[0.25em] text-muted-foreground mb-3">
+            Témoignages & Chiffres
+          </p>
+          <h2 className="font-serif text-3xl md:text-5xl text-foreground">
+            La <em className="text-primary">confiance</em> de ceux qui agissent
+          </h2>
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-20">
+          {testimonials.map((t, i) => (
+            <div
+              key={i}
+              className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50 relative"
+            >
+              <Quote className="w-8 h-8 text-primary/30 mb-4" />
+              <blockquote className="font-serif text-lg md:text-xl text-foreground leading-relaxed mb-6 italic">
+                "{t.quote}"
+              </blockquote>
+              <div>
+                <p className="font-sans font-semibold text-foreground">{t.author}</p>
+                <p className="font-sans text-sm text-muted-foreground">{t.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="text-center bg-card rounded-2xl p-6 md:p-8 shadow-soft border border-border/50"
+            >
+              <p className="font-serif text-3xl md:text-4xl text-primary font-bold mb-2">
+                {stat.value}
+              </p>
+              <p className="font-sans text-sm text-muted-foreground">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
