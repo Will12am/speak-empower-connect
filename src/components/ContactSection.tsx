@@ -10,7 +10,7 @@ const ContactSection = () => {
     e.preventDefault();
     // Placeholder — form submission logic
     alert("Merci pour votre message ! Indira vous répondra dans les plus brefs délais.");
-    setFormData({ name: "", company: "", message: "" });
+    setFormData({ name: "", email: "", company: "", message: "" });
   };
 
   return (
