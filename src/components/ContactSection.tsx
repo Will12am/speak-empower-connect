@@ -75,7 +75,6 @@ const ContactSection = () => {
                 className="w-full px-5 py-3.5 rounded-xl bg-background border border-border font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all duration-300"
                 placeholder="Votre entreprise"
               />
-              </div>
             </div>
             <div>
               <label htmlFor="message" className="block font-sans text-sm font-medium text-foreground mb-2">
