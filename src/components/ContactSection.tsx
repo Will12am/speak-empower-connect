@@ -4,7 +4,7 @@ import { Send } from "lucide-react";
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [formData, setFormData] = useState({ name: "", company: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", company: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
