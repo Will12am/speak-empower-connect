@@ -30,6 +30,12 @@ const ContactSection = () => {
             <p className="font-sans text-muted-foreground">
               Vous souhaitez organiser une formation ou une conférence ? Écrivez-moi.
             </p>
+            <a
+              href="mailto:contact@indirabesseghe.com"
+              className="inline-block mt-3 font-sans text-sm text-primary hover:text-primary/80 transition-colors duration-300 underline underline-offset-4"
+            >
+              contact@indirabesseghe.com
+            </a>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
