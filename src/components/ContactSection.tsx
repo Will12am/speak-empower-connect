@@ -4,13 +4,13 @@ import { Send } from "lucide-react";
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [formData, setFormData] = useState({ name: "", company: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", company: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Placeholder — form submission logic
     alert("Merci pour votre message ! Indira vous répondra dans les plus brefs délais.");
-    setFormData({ name: "", company: "", message: "" });
+    setFormData({ name: "", email: "", company: "", message: "" });
   };
 
   return (
@@ -30,12 +30,6 @@ const ContactSection = () => {
             <p className="font-sans text-muted-foreground">
               Vous souhaitez organiser une formation ou une conférence ? Écrivez-moi.
             </p>
-            <a
-              href="mailto:contact@indirabesseghe.com"
-              className="inline-block mt-3 font-sans text-sm text-primary hover:text-primary/80 transition-colors duration-300 underline underline-offset-4"
-            >
-              contact@indirabesseghe.com
-            </a>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -55,18 +49,32 @@ const ContactSection = () => {
                 />
               </div>
               <div>
-                <label htmlFor="company" className="block font-sans text-sm font-medium text-foreground mb-2">
-                  Entreprise
+                <label htmlFor="email" className="block font-sans text-sm font-medium text-foreground mb-2">
+                  Email
                 </label>
                 <input
-                  id="company"
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-5 py-3.5 rounded-xl bg-background border border-border font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all duration-300"
-                  placeholder="Votre entreprise"
+                  placeholder="Votre adresse email"
                 />
               </div>
+            </div>
+            <div>
+              <label htmlFor="company" className="block font-sans text-sm font-medium text-foreground mb-2">
+                Entreprise
+              </label>
+              <input
+                id="company"
+                type="text"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="w-full px-5 py-3.5 rounded-xl bg-background border border-border font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all duration-300"
+                placeholder="Votre entreprise"
+              />
             </div>
             <div>
               <label htmlFor="message" className="block font-sans text-sm font-medium text-foreground mb-2">
