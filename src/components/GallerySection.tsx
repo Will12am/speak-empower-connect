@@ -1,16 +1,22 @@
 import { Play } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import workshopImg from "@/assets/workshop-1.jpg";
-import conferenceImg from "@/assets/conference-2.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
 import heroImg from "@/assets/hero-conference.jpg";
+import conferenceImg from "@/assets/conference-2.jpg";
 
 const GallerySection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const items = [
-    { type: "video" as const, image: heroImg, label: "Conférence — Santé mentale au travail" },
-    { type: "photo" as const, image: workshopImg, label: "Atelier de formation en entreprise" },
-    { type: "video" as const, image: conferenceImg, label: "Intervention — Prévention du harcèlement" },
+    { type: "video" as const, image: heroImg, label: "Conférence — Santé mentale au travail", link: "#" },
+    { type: "video" as const, image: conferenceImg, label: "Intervention — Prévention du harcèlement", link: "#" },
+    { type: "photo" as const, image: gallery1, label: "Formation en entreprise" },
+    { type: "photo" as const, image: gallery2, label: "Atelier de formation" },
+    { type: "photo" as const, image: gallery3, label: "Engagement associatif" },
+    { type: "photo" as const, image: gallery4, label: "Conférence — Conseil des Gabonais de France" },
   ];
 
   return (
@@ -29,29 +35,51 @@ const GallerySection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {items.map((item, i) => (
-            <div
-              key={i}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500 cursor-pointer"
-            >
-              <img
-                src={item.image}
-                alt={item.label}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors duration-300" />
-              {item.type === "video" && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
+          {items.map((item, i) => {
+            const inner = (
+              <>
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors duration-300" />
+                {item.type === "video" && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Play className="w-6 h-6 text-primary-foreground ml-1" />
+                    </div>
                   </div>
+                )}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="font-sans text-sm text-primary-foreground/90">{item.label}</p>
                 </div>
-              )}
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="font-sans text-sm text-primary-foreground/90">{item.label}</p>
+              </>
+            );
+
+            if (item.type === "video" && item.link) {
+              return (
+                <a
+                  key={i}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500 cursor-pointer block"
+                >
+                  {inner}
+                </a>
+              );
+            }
+
+            return (
+              <div
+                key={i}
+                className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500"
+              >
+                {inner}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
