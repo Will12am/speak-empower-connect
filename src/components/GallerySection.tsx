@@ -4,15 +4,13 @@ import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
-import heroImg from "@/assets/hero-conference.jpg";
-import conferenceImg from "@/assets/conference-2.jpg";
 
 const GallerySection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const items = [
-    { type: "video" as const, image: heroImg, label: "Conférence — Santé mentale au travail", link: "https://www.youtube.com/watch?v=OSvaOstCE10" },
-    { type: "video" as const, image: conferenceImg, label: "Intervention — Prévention du harcèlement", link: "https://youtu.be/F0X8Y4U4W0w" },
+    { type: "video" as const, image: "https://img.youtube.com/vi/OSvaOstCE10/maxresdefault.jpg", label: "Insertion, entraide et promotion des jeunes", link: "https://www.youtube.com/watch?v=OSvaOstCE10" },
+    { type: "video" as const, image: "https://img.youtube.com/vi/F0X8Y4U4W0w/maxresdefault.jpg", label: "Les Droits de l'Homme : Les Défis du Gabon", link: "https://youtu.be/F0X8Y4U4W0w" },
     { type: "photo" as const, image: gallery1, label: "Formation en entreprise" },
     { type: "photo" as const, image: gallery3, label: "Engagement associatif" },
     { type: "photo" as const, image: gallery4, label: "Conférence — Conseil des Gabonais de France" },
