@@ -17,13 +17,6 @@ const TestimonialsSection = () => {
     },
   ];
 
-  const stats = [
-    { value: "5 000+", label: "Personnes formées" },
-    { value: "98%", label: "Taux de satisfaction" },
-    { value: "120+", label: "Interventions réalisées" },
-    { value: "50+", label: "Entreprises accompagnées" },
-  ];
-
   return (
     <section id="temoignages" className="py-24 md:py-32 bg-background">
       <div
@@ -32,7 +25,7 @@ const TestimonialsSection = () => {
       >
         <div className="text-center mb-16">
           <p className="font-sans text-sm uppercase tracking-[0.25em] text-muted-foreground mb-3">
-            Témoignages & Chiffres
+            Témoignages
           </p>
           <h2 className="font-serif text-3xl md:text-5xl text-foreground">
             La <em className="text-primary">confiance</em> de ceux qui agissent
@@ -40,7 +33,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-20">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={i}
@@ -54,21 +47,6 @@ const TestimonialsSection = () => {
                 <p className="font-sans font-semibold text-foreground">{t.author}</p>
                 <p className="font-sans text-sm text-muted-foreground">{t.role}</p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className="text-center bg-card rounded-2xl p-6 md:p-8 shadow-soft border border-border/50"
-            >
-              <p className="font-serif text-3xl md:text-4xl text-primary font-bold mb-2">
-                {stat.value}
-              </p>
-              <p className="font-sans text-sm text-muted-foreground">{stat.label}</p>
             </div>
           ))}
         </div>
