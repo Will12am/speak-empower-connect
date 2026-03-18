@@ -11,10 +11,9 @@ const GallerySection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const items = [
-    { type: "video" as const, image: heroImg, label: "Conférence — Santé mentale au travail", link: "#" },
-    { type: "video" as const, image: conferenceImg, label: "Intervention — Prévention du harcèlement", link: "#" },
+    { type: "video" as const, image: heroImg, label: "Conférence — Santé mentale au travail", link: "https://www.youtube.com/watch?v=OSvaOstCE10" },
+    { type: "video" as const, image: conferenceImg, label: "Intervention — Prévention du harcèlement", link: "https://youtu.be/F0X8Y4U4W0w" },
     { type: "photo" as const, image: gallery1, label: "Formation en entreprise" },
-    { type: "photo" as const, image: gallery2, label: "Atelier de formation" },
     { type: "photo" as const, image: gallery3, label: "Engagement associatif" },
     { type: "photo" as const, image: gallery4, label: "Conférence — Conseil des Gabonais de France" },
   ];
