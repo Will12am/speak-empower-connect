@@ -1,19 +1,20 @@
 import { Play } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
+import workshopAtelier from "@/assets/workshop-atelier.jpg";
 
 const GallerySection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const items = [
+    { type: "photo" as const, image: gallery1, label: "Animation d'un atelier sur l'écoute active" },
     { type: "video" as const, image: "https://img.youtube.com/vi/OSvaOstCE10/hqdefault.jpg", label: "Insertion, entraide et promotion des jeunes", link: "https://www.youtube.com/watch?v=OSvaOstCE10" },
+    { type: "photo" as const, image: workshopAtelier, label: "Atelier : Écoute active" },
     { type: "video" as const, image: "https://img.youtube.com/vi/F0X8Y4U4W0w/hqdefault.jpg", label: "Les Droits de l'Homme : Les Défis du Gabon", link: "https://youtu.be/F0X8Y4U4W0w" },
-    { type: "photo" as const, image: gallery1, label: "Formation en entreprise" },
-    { type: "photo" as const, image: gallery3, label: "Engagement associatif" },
     { type: "photo" as const, image: gallery4, label: "Conférence — Conseil des Gabonais de France" },
+    { type: "photo" as const, image: gallery3, label: "Visite de l'orphelinat Destiny Home au Cameroun" },
   ];
 
   return (

@@ -6,14 +6,19 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      quote: "L'intervention d'Indira a transformé notre façon d'aborder la santé mentale au sein de nos équipes. Un impact durable et profond.",
-      author: "Marie Dupont",
-      role: "DRH, Groupe Lumina",
+      quote: "Je recommande vivement Indira pour ses ateliers ! C'est une intervenante dynamique et sensible qui sait créer un cadre bienveillant et sécurisant, où chacun(e) peut s'exprimer librement. Elle maîtrise parfaitement son sujet, et son expertise permet à chacun de repartir mieux équipé(e) et plus confiant(e).",
+      author: "Olivia",
+      role: "Psychologue",
     },
     {
-      quote: "Une conférencière exceptionnelle qui sait captiver son audience tout en transmettant des messages essentiels. Nos collaborateurs en parlent encore.",
-      author: "Thomas Laurent",
-      role: "Directeur RSE, Espace & Co",
+      quote: "Ce qui distingue Indira des autres, c'est une écoute authentique et sans jugement, une bienveillance constante et des conseils qui accompagnent durablement. À travers différentes épreuves de ma vie, son soutien a été précieux et ses mots ont toujours su toucher juste. Aujourd'hui je suis une femme épanouie, et je ne peux pas nier la part qu'elle a dans ce chemin parcouru. Vous pouvez lui faire confiance les yeux fermés.",
+      author: "Temitope",
+      role: "",
+    },
+    {
+      quote: "Madame Besseghe est d'une générosité et d'une précision rare dans son accompagnement et son écoute. C'est une personne passionnée par ce qu'elle fait et dévouée dans l'accompagnement des jeunes, qui réussit sans peine à déceler le cœur du problème puis à prodiguer les meilleurs conseils. Ses ateliers à l'attention des jeunes sont des moments d'exception au cours desquels chacun se sent concerné, à sa place et où la parole se libère dans la bienveillance et la restauration de soi. Vous ne voulez pas manquer cela !!",
+      author: "Claire",
+      role: "",
     },
   ];
 
@@ -32,20 +37,19 @@ const TestimonialsSection = () => {
           </h2>
         </div>
 
-        {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50 relative"
+              className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50 relative flex flex-col"
             >
-              <Quote className="w-8 h-8 text-primary/30 mb-4" />
-              <blockquote className="font-serif text-lg md:text-xl text-foreground leading-relaxed mb-6 italic">
+              <Quote className="w-8 h-8 text-primary/30 mb-4 shrink-0" />
+              <blockquote className="font-serif text-base md:text-lg text-foreground leading-relaxed mb-6 italic flex-1">
                 "{t.quote}"
               </blockquote>
               <div>
                 <p className="font-sans font-semibold text-foreground">{t.author}</p>
-                <p className="font-sans text-sm text-muted-foreground">{t.role}</p>
+                {t.role && <p className="font-sans text-sm text-muted-foreground">{t.role}</p>}
               </div>
             </div>
           ))}
