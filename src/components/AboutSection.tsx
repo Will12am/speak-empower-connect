@@ -30,7 +30,7 @@ const AboutSection = () => {
               À propos
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-              Une vision pour <em className="text-primary">l'empowerment</em>
+              Ma mission : <em className="text-primary">Redonner le pouvoir d'agir</em>
             </h2>
             <div className="space-y-4 font-sans text-muted-foreground leading-relaxed">
               <p>
