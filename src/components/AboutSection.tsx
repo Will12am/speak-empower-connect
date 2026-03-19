@@ -40,6 +40,9 @@ const AboutSection = () => {
                 Son approche allie expertise technique, écoute bienveillante et pédagogie engageante. Elle intervient auprès de grandes entreprises, d'institutions publiques et d'associations pour créer des espaces de travail plus sains, plus justes et plus humains.
               </p>
               <p>
+                Engagée au-delà du cadre professionnel, Indira est également Secrétaire Générale de l'association <strong className="text-foreground">Rayons d'Espoir et d'Amour (R.E.A)</strong>, qui œuvre pour promouvoir la solidarité et l'entraide en France et à l'étranger, apporter une aide alimentaire et matérielle aux personnes dans le besoin, et secourir et accompagner celles en difficulté morale et émotionnelle.
+              </p>
+              <p>
                 Sa conviction profonde : chaque organisation a le pouvoir de devenir un lieu où chacun·e peut s'épanouir en toute sécurité. C'est cette vision qui guide chacune de ses interventions.
               </p>
             </div>
