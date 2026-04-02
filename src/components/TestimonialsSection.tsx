@@ -20,8 +20,12 @@ const TestimonialsSection = () => {
       author: "Claire",
       role: "",
     },
+    {
+      quote: "Indira est une accompagnatrice exceptionnelle. Lors de notre consultation en live, elle a fait preuve d'une écoute profonde, d'une grande empathie et d'un professionnalisme remarquable. Grâce à elle, j'ai pu clarifier mes pensées et avancer avec plus de sérénité et de confiance. Je recommande vivement ses services à toute personne en quête d'un accompagnement sérieux, humain et bienveillant.",
+      author: "Rose Seye",
+      role: "",
+    },
   ];
-
   return (
     <section id="temoignages" className="py-24 md:py-32 bg-background">
       <div
