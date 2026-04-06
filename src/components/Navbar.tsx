@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 
 const navLinks = [
-  { label: "Expertise", href: "#expertise" },
-  { label: "Sur le terrain", href: "#terrain" },
   { label: "À propos", href: "#apropos" },
+  { label: "Missions & Offres", href: "#missions" },
+  { label: "Sur le terrain", href: "#terrain" },
   { label: "Témoignages", href: "#temoignages" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -18,6 +17,12 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const scrollToCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    document.getElementById("rdv")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <nav
@@ -45,6 +50,13 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={scrollToCalendly}
+            className="inline-flex items-center gap-2 font-sans font-semibold text-sm uppercase tracking-wider px-6 py-2.5 rounded-full bg-primary text-primary-foreground hover:bg-rose-dark transition-all duration-300 hover:shadow-elevated"
+          >
+            <Calendar className="w-4 h-4" />
+            Prendre rendez-vous
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -71,6 +83,13 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={scrollToCalendly}
+              className="inline-flex items-center justify-center gap-2 font-sans font-semibold text-sm uppercase tracking-wider px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-rose-dark transition-all duration-300 mt-2"
+            >
+              <Calendar className="w-4 h-4" />
+              Prendre rendez-vous
+            </button>
           </div>
         </div>
       )}

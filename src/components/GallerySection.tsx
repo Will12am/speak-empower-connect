@@ -18,18 +18,27 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="terrain" className="py-24 md:py-32 bg-background">
+    <section id="terrain" className="py-24 md:py-32 bg-card">
       <div
         ref={ref}
         className={`container mx-auto px-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <p className="font-sans text-sm uppercase tracking-[0.25em] text-muted-foreground mb-3">
             Sur le terrain
           </p>
           <h2 className="font-serif text-3xl md:text-5xl text-foreground">
             En <em className="text-primary">action</em>
           </h2>
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="font-sans text-muted-foreground leading-relaxed mb-2">
+            Interventions en entreprises, ateliers auprès des jeunes, prises de parole dans les médias, actions solidaires avec l'association REA.
+          </p>
+          <p className="font-sans text-muted-foreground leading-relaxed">
+            Chaque intervention est pensée pour créer un déclic, ouvrir un espace de parole et initier un changement durable.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
