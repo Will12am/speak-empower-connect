@@ -1,4 +1,4 @@
-import { Calendar, ArrowRight } from "lucide-react";
+
 
 const Footer = () => (
   <footer className="bg-foreground">
