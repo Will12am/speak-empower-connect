@@ -19,11 +19,11 @@ const ContactSection = () => {
             Prendre rendez-vous
           </p>
           <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-            Tu ressens le besoin de <em className="text-primary">faire le point</em>, de comprendre ce que tu traverses ou d'être accompagnée ?
+            Tu ressens le besoin de <em className="text-primary">faire le point</em>, de comprendre ce que tu traverses ou d'être accompagné·e ?
           </h2>
           <p className="font-serif text-2xl text-primary mb-6 flex items-center justify-center gap-2">
             <Heart className="w-6 h-6" />
-            Tu n'as pas à rester seule.
+            Tu n'as pas à rester seul·e.
           </p>
           <p className="font-sans text-lg text-muted-foreground mb-4 max-w-xl mx-auto">
             Réservez un créneau de 30 minutes pour échanger sur vos besoins en formation, conférence ou accompagnement individuel.

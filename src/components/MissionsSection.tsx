@@ -21,7 +21,7 @@ const MissionsSection = () => {
       icon: Building2,
       title: "Entreprises & institutions",
       description: "Former, sensibiliser et accompagner les équipes sur les enjeux de santé mentale, de prévention et de climat de travail.",
-      cta: "Obtenir un devis",
+      cta: "Prendre contact",
       action: "form",
     },
     {
@@ -86,7 +86,7 @@ const MissionsSection = () => {
         {/* CTA fort */}
         <div className="mt-16 text-center max-w-2xl mx-auto">
           <p className="font-serif text-xl md:text-2xl text-foreground mb-6">
-            Tu n'as pas à rester seule avec ce que tu traverses.<br />
+            Tu n'as pas à rester seul·e avec ce que tu traverses.<br />
             <em className="text-primary">Réserve ton échange dès maintenant.</em>
           </p>
           <button
